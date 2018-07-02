@@ -1,4 +1,4 @@
-package com.example.client;
+package com.example.speed;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,23 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @RestController
 @SpringBootApplication
-public class ClientApplication {
-    @RequestMapping("/")
+public class SpeedApplication {
+    @RequestMapping("/engining")
     String home() {
-        return "Hello World";
+        return "/engining";
     }
-    @RequestMapping(value="/second",method= RequestMethod.GET)
+    @RequestMapping(value="/engining/cur",method= RequestMethod.GET)
     public String sayHello(){
-        return "second ";
+        return "/engining/cur";
     }
 
-    @RequestMapping(value = "/speed", method = RequestMethod.POST)
+    @RequestMapping(value = "/engining/speed", method = RequestMethod.POST)
     @ResponseBody
     public String postFoos() {
-        return "Speed is updated successfully";
+        return "/engining/speed is updated successfully\n";
     }
 
+
     public static void main(String[] args) {
-        SpringApplication.run(ClientApplication.class, args);
+        SpringApplication.run(SpeedApplication.class, args);
     }
 }

@@ -1,8 +1,8 @@
 server:
-  port: 8870
+  port: 8871
 spring:
   application:
-    name: dummy-service
+    name: speed-service
 eureka:
   instance:
       #hostname: 172.33.13.2
